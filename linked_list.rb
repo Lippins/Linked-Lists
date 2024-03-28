@@ -19,12 +19,8 @@ class LinkedList
 
   def at(index)
     # returns the node at the given index
-    counter = 0
     current_node = @head
-    until counter == index
-      current_node = current_node.next
-      counter += 1
-    end
+    index.times { |_i| current_node = current_node.next }
     current_node
   end
 
