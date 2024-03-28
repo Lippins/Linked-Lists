@@ -95,14 +95,13 @@ class LinkedList
     # returns the index of the node containing value, or nil if not found.
     current_node = @head
     counter = 0
-    until current_node.nil?
-      result = current_node.data == value
-      return counter if result == true
+    while current_node
+      return counter if current_node.data == value
 
       current_node = current_node.next
       counter += 1
     end
-    result ? counter : nil
+    'nil'
   end
 
   def to_s
