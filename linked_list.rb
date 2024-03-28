@@ -129,4 +129,14 @@ class LinkedList
     current_node = current_node.next
     current_node.next = following_nodes
   end
+
+  def remove_at(index)
+    # removes the node at the given index
+    return shift if index.zero?
+
+    current_node = @head
+    (index - 1).times { |_i| current_node = current_node.next }
+    next_node = current_node.next
+    current_node.next = next_node.next
+  end
 end
