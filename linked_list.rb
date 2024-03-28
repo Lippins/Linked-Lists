@@ -126,8 +126,7 @@ class LinkedList
 
     following_nodes = current_node.next
     current_node.next = Node.new(value)
-    current_node = current_node.next
-    current_node.next = following_nodes
+    current_node.next.next = following_nodes
   end
 
   def remove_at(index)
