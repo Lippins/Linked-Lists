@@ -119,4 +119,18 @@ class LinkedList
     end
     "#{result}nil"
   end
+
+  def insert_at(value, index)
+    # inserts a new node with the provided value at the given index.
+    return prepend(value) if index.zero?
+
+    current_node = @head
+
+    (index - 1).times { |_i| current_node = current_node.next }
+
+    following_nodes = current_node.next
+    current_node.next = Node.new(value)
+    current_node = current_node.next
+    current_node.next = following_nodes
+  end
 end
