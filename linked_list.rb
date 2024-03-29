@@ -118,7 +118,7 @@ class LinkedList
   def insert_at(value, index)
     # inserts a new node with the provided value at the given index.
     return prepend(value) if index.zero?
-    return puts "Index #{index} is out of bounds." if index > size
+    return puts "Index #{index} is out of bounds." if index >= size
 
     current_node = @head
 
