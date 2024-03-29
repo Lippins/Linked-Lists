@@ -37,13 +37,9 @@ class LinkedList
 
   def prepend(value)
     # adds a new node containing value to the start of the list
-    if @head.nil?
-      @head = Node.new(value)
-    else
-      current_head = Node.new(value)
-      current_head.next = @head
-      @head = current_head
-    end
+    new_head = Node.new(value)
+    new_head.next = @head unless @head.nil?
+    @head = new_head
   end
 
   def size
