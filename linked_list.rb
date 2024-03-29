@@ -66,12 +66,11 @@ class LinkedList
 
   def shift
     # removes the first element from the list
-    return puts 'The list is empty' if @head.nil?
+    return if @head.nil?
 
     previous_head = @head
-    current_head = @head.next
-    @head.next = nil
-    @head = current_head
+    @head = @head.next
+    previous_head.next = nil
     previous_head
   end
 
