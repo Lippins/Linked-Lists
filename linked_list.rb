@@ -118,7 +118,7 @@ class LinkedList
   def insert_at(value, index)
     # inserts a new node with the provided value at the given index.
     return prepend(value) if index.zero?
-    return puts "Index #{index} is out of bounds." if index >= size
+    return puts "Index #{index} is out of bounds." if index >= size || index.negative?
 
     current_node = @head
 
@@ -132,6 +132,7 @@ class LinkedList
   def remove_at(index)
     # removes the node at the given index
     return shift if index.zero?
+    return puts "Index #{index} is out of bounds." if index >= size || index.negative?
 
     current_node = @head
     (index - 1).times { |_i| current_node = current_node.next }
