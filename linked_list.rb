@@ -55,12 +55,18 @@ class LinkedList
 
   def pop
     # removes the last element from the list
-    return puts 'The list is empty' if @head.nil?
+    return if head.nil?
 
-    current_node = @head
-    current_node = current_node.next until current_node.next.next.nil?
-    popped_node = current_node.next
-    current_node.next = nil
+    if @head.next.nil?
+      popped_node = @head
+      @head = nil
+    else
+      current_node = @head
+      current_node = current_node.next until current_node.next.next.nil?
+      popped_node = current_node.next
+      current_node.next = nil
+    end
+
     popped_node
   end
 
