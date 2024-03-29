@@ -84,12 +84,11 @@ class LinkedList
     # returns true if the passed in value is in the list and otherwise returns false.
     current_node = @head
     until current_node.nil?
-      result = current_node.data == value
-      break if result == true
+      return true if current_node.data == value
 
       current_node = current_node.next
     end
-    result
+    false
   end
 
   def find(value)
