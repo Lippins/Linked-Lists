@@ -21,7 +21,7 @@ The implementation uses two classes:
 
 ## Linked List Methods
 
-Below are available methods available for the LinkedList class:
+Below are the methods available for the LinkedList class:
 
 - `#append(value)` - Adds a new node containing `value` to the end of the list.
 - `#prepend(value)` - Adds a new node containing `value` to the start of the list.
